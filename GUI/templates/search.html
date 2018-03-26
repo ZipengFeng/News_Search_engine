@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FINDIT</title>
+    <!--wqq-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 可选的Bootstrap主题文件（一般不使用） -->
+    <script src="/static/css/bootstrap-theme.min.css"></script>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="/static/js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- 谷歌字体库加载 -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:700" rel="stylesheet">     
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+    $(function() {
+        $( document ).tooltip();
+    });
+    </script>    
+    <style type="text/css">
+    div#doc {width:800px}
+    .pagination-page-info {
+        padding: .6em;
+        padding-left: 0;
+        width: 40em;
+        margin: .5em;
+        margin-left: 0;
+        font-size: 12px;
+    }
+    .pagination-page-info b {
+        color: black;
+        background: #6aa6ed;
+        padding-left: 2px;
+        padding: .1em .25em;
+        font-size: 150%;
+    }
+    .col-center-block {  
+    float: none;  
+    display: block;  
+    margin-left: auto;  
+    margin-right: auto;  
+}  
+input{
+            outline: none;
+        }
+        .radio,.checkbox {
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: #ffffff;
+            border: solid 1px #dddddd;
+            -webkit-border-radius: 0.6rem;
+            border-radius: 0.6rem;
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            cursor: default;
+            -webkit-appearance: none;  /**隐藏原生控件**/
+        }
+                
+        .checkbox {
+            border-radius: 0.1rem;   /**复选框的圆角要小一些**/
+        }
+        /**选择后的样式**/
+        .radio:checked,.checkbox:checked{
+            background-color: #0b7af8f3;
+            border: solid 1px #c3f023d3;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            text-align: center;
+            background-clip: padding-box;
+        }
+         /**选择后 里面小对勾样式**/
+        .radio:checked:before,.checkbox:checked:before{
+            content: '';
+            width: 0.5rem;
+            height: 0.3rem;
+            border: 1px solid #ffffff;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -0.25rem;
+            margin-top: -0.25rem;
+            -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+        }
+    .sfibbbc {
+        padding-bottom: 2px;
+        padding-top: 3px;
+        margin-top: -3px;
+        width: 632px;
+    }
+    .gsfi{
+        font: 16px arial,sans-serif;
+        line-height: 34px;
+        height: 34px !important;
+    }
+    .sbico-c {
+        background: transparent;
+        border: 0;
+        float: right;
+        height: 44px;
+        line-height: 44px;
+        margin-top: -1px;
+        outline: 0;
+        padding-right: 16px;
+        position: relative;
+        top: -1px;
+    }
+    ._wtf {
+        display: inline-block;
+        fill: currentColor;
+        height: 24px;
+        line-height: 24px;
+        position: relative;
+        width: 24px;
+    }
+    .sbico {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+        vertical-align: middle;
+        color: #4285f4;
+    }
+    button, input, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        text-rendering: auto;
+        color: initial;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+    }
+    .tsf-p {
+        padding-left: 150px;
+        max-width: 739px;
+        margin: -1px 0 0;
+        padding-right: 0;
+        position: relative;
+        display: block;
+    }
+    .logocont {
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-top: 7px;
+    }
+    .sbibod {
+        background-color: #fff;
+        height: 44px;
+        vertical-align: top;
+        border-radius: 2px;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+        transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .lst-c {
+        overflow: hidden;
+        line-height: 0;
+        white-space: nowrap;
+        background: #fff;
+        -webkit-box-sizing: border-box;
+        height: 44px;
+        position: relative;
+        padding-left: 0px;
+        -webkit-box-sizing: border-box;
+        height: 100%;
+    }
+    .sbib_a {
+        vertical-align: top;
+        background: #fff;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        height: 44px;
+    }
+    .sbib_b {
+        padding-left: 16px;
+        -webkit-box-sizing: border-box;
+        height: 100%;
+        overflow: hidden;
+        padding: 6px 9px 0;
+        position: relative;
+    }
+    .auto{
+        border-radius:2px;
+        z-index:104;
+        padding:0;
+        position: relative;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+        transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        box-sizing: border-box;
+    }
+    .auto_out{
+        height:22px;
+        padding-left:9px;
+        line-height: 23px;
+        color: #000;
+        background: #fff;
+        overflow: hidden;
+        white-space: nowrap;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        z-index:104;
+    }
+    .auto_out.on{
+        background: #eee;
+        cursor: pointer;
+    }
+    .hidden{
+        display: none;
+    }
+    </style>
+</head>
+
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="row">
+                <div class="col-lg-12 col-centered">
+                    <h1 class="text-center" style="color:#4285F4; font-family:Cabin Sketch, Arial, Helvetica, sans-serif; font-size:100px;">FINDIT</h1>
+                </div>
+            </div>
+
+            <div class="row">
+            <div class="col-lg-12 col-md-offset-2">
+            <div style="min-width: 1100px;z-index: 103; margin-left:20px;position: relative;top: 30px;width: 100%;display: block;">
+                <form name="search" style="overflow: visible; margin-left:5px;position: relative;width: auto;
+                    max-width: 784px;display: block;margin-top: 0em;" action="/search/" method="POST">
+                    <div class="tsf-p">
+                        <button class="sbico-c" id="submit">
+                            <span class="sbico _wtf">
+                            <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                </path>
+                            </svg>
+                            </span>
+                        </button>
+
+                        <div class="sbibod">
+                            <div class="lst-c">
+                            <div class="sbib_a">
+                            <div class="sbib_b">
+                            {% if key %}
+                            <input id="input-box" class="gsfi" type="text" autocomplete="off" type="text" aria-label="搜索" aria-haspopup="false" role="combobox" aria-autocomplete="list" dir="ltr" spellcheck="false"
+                                style="border: none;
+                                padding: 0px;
+                                margin: 0px;
+                                width: 100%;
+                                background: url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D) transparent;
+                                z-index: 6;
+                                left: 0px;
+                                outline: none;"
+                                name="key_word" value="{{key}}">
+                                
+                            {% else %}
+                            <input id="input-box" class="gsfi" type="text" autocomplete="off" type="text" aria-label="搜索" aria-haspopup="false" role="combobox" aria-autocomplete="list" dir="ltr" spellcheck="false"
+                                style="border: none;
+                                padding: 0px;
+                                margin: 0px;
+                                width: 100%;
+                                background: url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D) transparent;
+                                z-index: 6;
+                                left: 0px;
+                                outline: none;"
+                                    name="key_word">
+                            
+                            {% endif %}
+                            </div>
+                            </div>
+                            </div>
+                            <div class="auto hidden" id="auto-fill">
+                                <div class="auto_out">1</div>
+                                <div class="auto_out">2</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+          
+            </div>
+            </div>
+            </div>
+
+        </div>
+    </br>
+    </br>
+
+    <!-- 热点新闻展示页面 展示前再手动添加一次-->
+
+    <div class="row">
+            {% if hot_news%}
+            <div id="doc" class="col-lg-12 col-center-block">
+                    <h3 class="text-center" style="font-size:24px;">
+                            热点新闻
+                    </h3>
+                        <table width="1000" border="0" class="table table-striped">
+                            <tr>
+                                <td align="center"><a href="http://news.163.com/17/1123/23/D3VAQ0LH000187VE.html" target="_blank" style="font-size:16px;">考生应聘银行成绩第一却落选 招聘方:第一学历太低</a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="http://news.163.com/16/1112/20/C5MT4AMQ0001899O.html" target="_blank" style="font-size:16px;">中国首位歼-10女飞行员余旭因飞行事故牺牲</a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="http://news.163.com/13/0301/17/8OT9BKET00014JB5.html" target="_blank" style="font-size:16px;">国务院：出售自有住房所得须缴20个税</a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="http://news.163.com/10/0807/06/6DFCU3QU00014AED.html" target="_blank" style="font-size:16px;">武汉三女婴疑食用同一品牌奶粉致性早熟(图)</a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="http://news.163.com/08/0415/18/49JFLASB0001124J.html" target="_blank" style="font-size:16px;">姜瑜:法方应对中国民众意见和情绪进行反思</a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="http://news.163.com/08/0519/05/4C9ICGT30001124J.html" target="_blank" style="font-size:16px;">为汶川地震遇难同胞写挽联</a></td>
+                            </tr>
+                        </table>
+            </div>
+            {% endif %}
+    </div>
+
+    <!-- 搜索后会迭代的页面 -->
+        <div class="row">
+                <div class="col-xs-4 col-md-offset-5">
+                    {% block high_search%}
+                    {% endblock %}
+                </div>
+        </div>
+
+        <div class="row">
+                    {% if error%}
+                    <div id="doc" class="col-lg-12 col-center-block">
+                        {% for doc in docs%}
+                            <ul id="navigation">
+                                <br/>
+                                <p><big><a href="/search/{{doc.id}}/" target="_blank" style="color:#1a0dab; font-family:'Roboto',arial,sans-serif; font-size:18px;">{{doc.title}}</a></big><a href="#" title="{{ doc.preview }}">  view</a>
+                                <br/><a href="{{ doc.url }}" target="_blank" style="color:#006621; font-family:Arial, Helvetica, sans-serif; font-size: 14px;">{{doc.url}}</a><br/>{{doc.time}}{{doc.snippet}}
+                                </p>
+                            </ul>
+                        {% endfor %}
+            
+                    {% block next %}
+                    <ul>
+                        {% for i in page %}
+                            <a href="/search/page/{{i}}/">{{i}}</a>&nbsp;
+                        {% endfor %}
+                    </ul>
+                    {% endblock %}
+                    </div>
+            
+        </div>
+
+    <!-- 无查询结果输出提示信息 -->
+    <div class="row">
+        <!-- jinja模板继承的语法，error传入值为flase，模板匹配如下段落 -->
+        {% else %}
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <p>对不起，网页走丢了...</p>
+        </div>
+        <div class="col-lg-4"></div>
+        {% endif %}
+    </div>
+
+    </div>
+    <script src="/static/js/auto.js"></script>
+    <script>
+        var array = [""];
+        var autoComplete = new AutoComplete("input-box","auto-fill",array);
+        document.getElementById("input-box").onkeyup = function(event) {
+            autoComplete.start(event);
+        };
+    </script>
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

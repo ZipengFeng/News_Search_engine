@@ -1,0 +1,25 @@
+{% extends "search.html" %}
+{% block high_search%}
+<div id="select" >
+    <!-- <ul> -->
+        <form name="search" action="/search/{{key}}/" method="POST">
+                <p>搜索用时{{time_used}}s</p>
+                <!-- <p>哈哈哈哈哈哈哈哈哈</p> -->
+                <label for="r1">
+                    <input {{checked[0]}} class="radio" type="radio" name="order" id="r1" value="0" />相关度&nbsp;
+                </label>
+                <label for="r2">
+                    <input {{checked[1]}} class="radio" type="radio" name="order" id="r2" value="1" />时间&nbsp;
+                </label>
+                <label for="r3">
+                    <input {{checked[2]}} class="radio" type="radio" name="order" id="r3" value="2" />热度&nbsp;  
+                </label>
+                <!-- <label for="r4">
+                    <input {{checked[2]}} class="radio" type="radio" name="order" id="r4" value="3" />布尔&nbsp;  
+                </label> -->
+                <!-- <input type="submit" value="ok"> -->
+                <button type="submit" class="btn btn-default btn-xs">OK</button>
+        </form>
+    <!-- </ul> -->
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{doc.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="row clearfix">
+        <div class="col-md-9 column" id="basic">
+            <h2 class="text-center" style="color:#110799; font-size:30px;">
+                {{doc.title}}
+            </h2>
+            <hr/>
+            <p style="width:90%; margin:5% 5% 5% 5%; font-family:Arial,sans-serif; font-size:20px;">
+                {{doc.body}}
+            </p>
+            <hr/>
+        </div>
+        <div class="col-md-3 column" align="center" margin:20px 0px 0px 0px;>
+            <h3 class="text-center" style="font-size:24px;">
+                推荐阅读
+            </h3>
+            <table width="1000" border="0" class="table table-striped">
+                {% for each in doc.extra %}
+                <tr>
+                    <td style="width:90%" align="center"><a href="/search/{{each.id}}/" target="_blank" style="font-size:16px;">{{each.title}}</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            </br>
+            <h3 class="text-center" style="font-size:24px;">
+                部分评论
+            </h3>
+            <table width="1000" border="0" class="table table-striped">
+                {% for each in doc.comment_show %}
+                <tr>
+                    <td style="width:90%;font-size:16px;" align="center">{{each}}</td>
+                </tr>
+                {% endfor %}
+                </table>
+            <h4 class="text-center" style="color:#23527c;font-size:14px;">
+                （评论前的数值表示褒贬分析，值越高代表褒性越强，反之亦然）
+            </h4>
+            </br>
+            <h3 class="text-center" style="font-size:24px;">
+                评论分析
+            </h3>
+            <table width="1000" border="0" class="table table-striped">
+                {% for each in doc.comment_analysis %}
+                <tr>
+                    <td style="width:90%;font-size:16px;" align="center">{{each}}</td>
+                </tr>
+                {% endfor %}
+                </table>
+        </div>
+    </div>
+</body>
+</html>
