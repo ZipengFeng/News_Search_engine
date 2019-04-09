@@ -1,6 +1,10 @@
 # News_Search_engine
 Using Python to achieve a News_Search_engine.
 
+最新版本已上传百度云：链接：https://pan.baidu.com/s/1o34jDWlprqRJZh7Z6BSnPQ 
+提取码：zn6g 
+
+
 新闻检索系统：定向采集不少于 4 个中文社会新闻网站或频道，实现这些网站新闻信息及评论信息的自动爬取、抽取、索引和检索。 本项目未使用 lucene，Goose 等成熟开源框架。
 
 1.新闻爬取
